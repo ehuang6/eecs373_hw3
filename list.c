@@ -20,7 +20,8 @@ list_t* insert_sorted(list_t* head, list_t* new_element) {
 	}
 
 	else{
-		for (list_t* it = head; it != NULL; it = it->next){
+		list_t* it = head;
+		for (; it != NULL; it = it->next){
 			if (it->index > new_element->index){
 				prev->next = new_element;
 				new_element->next = it;
@@ -34,7 +35,7 @@ list_t* insert_sorted(list_t* head, list_t* new_element) {
 		prev->next = new_element;
 		return head;	
 	}
-}
+}//insert_sorted
 
 // Reverses the order of the list starting at `head` and returns a pointer to
 // the resulting list. You do not need to preserve the original list.
